@@ -1,36 +1,20 @@
 <template>
   <div>
-    <h1>{{ getInput }}</h1>
-    <input type="text" :value="getInput" @input="updateInput" />
-    <button @click="fetchPoke">GET</button>
-    <p v-if="getLoading">LOADING...</p>
-    <p v-if="getSuccess">{{ getPokemon.species.name }}</p>
-    <p v-if="getError">ERROR!</p>
+    <h1>POKEMON</h1>
+    <template v-if="getSuccess">
+      <p>POKEMON: {{ poketails.species.name }}</p>
+      <p>Height: {{ poketails.height }}</p>
+    </template>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Pokemon",
-  methods: {
-    ...mapActions(["fetchPokemon"]),
-    updateInput(e) {
-      this.$store.commit("updateInput", e.target.value);
-    },
-    fetchPoke() {
-      if (this.getInput === "") return;
-      else return this.fetchPokemon();
-    }
-  },
-  computed: mapGetters([
-    "getPokemon",
-    "getInput",
-    "getLoading",
-    "getError",
-    "getSuccess"
-  ])
+  props: ["poketails"],
+  computed: mapGetters(["getSuccess"])
 };
 </script>
 

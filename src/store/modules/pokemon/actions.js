@@ -8,6 +8,8 @@ const actions = {
 
       commit('setLoading', false)
       commit('setSuccess', true)
+
+      console.log(state.pokemon);
       console.log(state.input)
     } catch (err) {
       commit('setLoading', false)

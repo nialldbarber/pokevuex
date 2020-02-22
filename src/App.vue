@@ -1,20 +1,17 @@
 <template>
   <div>
-    <Pokemon />
+    <Layout />
   </div>
 </template>
 
 <script>
-import Pokemon from "./components/pokemon.vue";
+import Layout from "./components/layout.vue";
 
 export default {
   name: "App",
   components: {
-    Pokemon
-  },
-  data: () => ({
-    name: "Niall"
-  })
+    Layout
+  }
 };
 </script>
 
