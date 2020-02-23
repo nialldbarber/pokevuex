@@ -19,7 +19,7 @@ export default {
   methods: {
     ...mapActions(['fetchPokemon', 'fetchPokemonNames']),
     updateInput(e) {
-      this.$store.commit('updateInput', e.target.value)
+      this.$store.commit('updateInput', e.target.value.toLowerCase())
     },
     fetchPoke() {
       if (this.getInput === '') return

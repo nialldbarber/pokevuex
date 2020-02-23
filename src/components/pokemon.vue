@@ -14,21 +14,23 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters } from 'vuex'
 
 export default {
-  name: "Pokemon",
-  props: ["poketails"],
+  name: 'Pokemon',
+  props: {
+    poketails: Array,
+  },
   data: () => ({
-    clicked: false
+    clicked: false,
   }),
   methods: {
     reversePokemon() {
-      this.clicked = !this.clicked;
-    }
+      this.clicked = !this.clicked
+    },
   },
-  computed: mapGetters(["getSuccess"])
-};
+  computed: mapGetters(['getSuccess']),
+}
 </script>
 
 <style scoped lang="scss">
