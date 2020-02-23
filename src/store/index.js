@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import pokemon from './modules/pokemon'
+import pokemon from '~/store/modules/pokemon'
 
 Vue.use(Vuex)
 

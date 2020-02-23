@@ -4,17 +4,27 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   mode: 'development',
-  entry: [
-    './src/app.js'
-  ],
+  entry: ['@babel/polyfill', './src/index'],
+  devtool: 'source-map',
+  resolve: {
+    extensions: ['.js'],
+  },
   module: {
     rules: [
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+        exclude: /(node_modules|bower_components)/,
         options: {
-          hotReload: true
+          hotReload: true,
+          presets: ['@babel/env']
         }
+      },
+      {
+        test: /\.(js)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        options: { presets: ['@babel/env'] },
       },
       {
         test: /\.css$/,

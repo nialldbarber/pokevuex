@@ -8,18 +8,18 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
-import AddPokemon from "./add-pokemon.vue";
-import Pokemon from "./pokemon.vue";
+import { mapGetters, mapActions } from 'vuex'
+import AddPokemon from '~/components/add-pokemon.vue'
+import Pokemon from '~/components/pokemon.vue'
 
 export default {
-  name: "Layout",
+  name: 'Layout',
   components: {
     AddPokemon,
-    Pokemon
+    Pokemon,
   },
-  computed: mapGetters(["getPokemon", "getLoading", "getError"])
-};
+  computed: mapGetters(['getPokemon', 'getLoading', 'getError']),
+}
 </script>
 
 <style>

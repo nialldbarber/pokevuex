@@ -1,7 +1,7 @@
-import state from './pokemon/state'
-import getters from './pokemon/getters'
-import actions from './pokemon/actions'
-import mutations from './pokemon/mutations'
+import state from '~/store/modules/pokemon/state'
+import getters from '~/store/modules/pokemon/getters'
+import actions from '~/store/modules/pokemon/actions'
+import mutations from '~/store/modules/pokemon/mutations'
 
 export default {
   state,
