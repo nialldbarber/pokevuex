@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form">
     <AddPokemon />
     <p v-if="getLoading">LOADING...</p>
     <Pokemon :poketails="getPokemon" />
@@ -22,5 +22,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
 </style>
