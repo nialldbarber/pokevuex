@@ -22,8 +22,9 @@ export default {
       this.$store.commit('updateInput', e.target.value.toLowerCase())
     },
     fetchPoke() {
-      if (this.getInput === '') return
-      else {
+      if (this.getInput === '') {
+        return
+      } else {
         this.fetchPokemon()
         this.$store.commit('updateInput', '')
       }
