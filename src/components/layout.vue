@@ -4,6 +4,7 @@
     <p v-if="getLoading">LOADING...</p>
     <Pokemon :poketails="getPokemon" />
     <p v-if="getError">ERROR!</p>
+    <Button />
   </div>
 </template>
 
@@ -11,12 +12,14 @@
 import { mapGetters, mapActions } from 'vuex'
 import AddPokemon from '~/components/add-pokemon.vue'
 import Pokemon from '~/components/pokemon.vue'
+import Button from '~/components/button.vue'
 
 export default {
   name: 'Layout',
   components: {
     AddPokemon,
     Pokemon,
+    Button
   },
   computed: mapGetters(['getPokemon', 'getLoading', 'getError']),
 }

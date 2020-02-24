@@ -6,7 +6,7 @@
       <p>Height: {{ poketails.height }}</p>
       <img
         @click="reversePokemon"
-        :src="clicked ? poketails.sprites.back_default : poketails.sprites.front_default"
+        :src="state.clicked ? poketails.sprites.back_default : poketails.sprites.front_default"
         alt="Pokemon"
       />
     </template>
@@ -14,20 +14,27 @@
 </template>
 
 <script>
+import { reactive, computed } from '@vue/composition-api'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'Pokemon',
   props: {
-    poketails: Array,
+    poketails: Array | Object,
   },
-  data: () => ({
-    clicked: false,
-  }),
-  methods: {
-    reversePokemon() {
-      this.clicked = !this.clicked
-    },
+  setup() {
+    const state = reactive({
+      clicked: false
+    })
+
+    function reversePokemon() {
+      state.clicked = !state.clicked
+    }
+
+    return {
+      state,
+      reversePokemon
+    }
   },
   computed: mapGetters(['getSuccess']),
 }
